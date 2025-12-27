@@ -1,0 +1,178 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: #f4f6fb;
+  color: #111;
+}
+
+/* Navbar */
+.navbar {
+  background: #2563eb;
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  font-size: 22px;
+}
+
+/* Layout */
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 16px;
+}
+
+/* Buttons */
+.btn {
+  background: white;
+  color: #2563eb;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn.full {
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* Summary Card */
+.summary-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  margin-bottom: 20px;
+}
+
+.summary-card h3 {
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.summary-card p {
+  font-size: 28px;
+  font-weight: bold;
+  color: #16a34a;
+}
+
+/* Search */
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.search-box button {
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+/* Table */
+.table-wrapper {
+  background: white;
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 14px;
+  text-align: left;
+}
+
+th {
+  background: #f1f5f9;
+  font-weight: 600;
+}
+
+tr:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+.amount {
+  font-weight: bold;
+}
+
+.link {
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link.edit {
+  color: #2563eb;
+}
+
+.link.delete {
+  color: #dc2626;
+}
+
+.empty {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+
+/* Form */
+.form-card {
+  background: white;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  max-width: 500px;
+  margin: auto;
+}
+
+.form-card h2 {
+  margin-bottom: 16px;
+}
+
+form label {
+  margin-top: 10px;
+  display: block;
+  font-weight: 500;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

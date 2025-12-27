@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Summary Card -->
+<div class="summary-card">
+  <h3>Total Spent</h3>
+  <p>₹ {{ total }}</p>
+</div>
+
+<!-- Search -->
+<form method="get" class="search-box">
+  <input type="text" name="q"
+         placeholder="Search by title or category"
+         value="{{ query }}">
+  <button type="submit">Search</button>
+</form>
+
+<!-- Expense Table -->
+<div class="table-wrapper">
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Amount</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for e in expenses %}
+    <tr>
+      <td>{{ e.date }}</td>
+      <td>{{ e.title }}</td>
+      <td>{{ e.category|default:"-" }}</td>
+      <td class="amount">₹ {{ e.amount }}</td>
+      <td>
+        <a href="{% url 'edit' e.id %}" class="link edit">Edit</a>
+        <a href="{% url 'delete' e.id %}"
+           class="link delete"
+           onclick="return confirm('Delete this expense?')">
+           Delete
+        </a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr>
+      <td colspan="5" class="empty">No expenses added yet.</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+{% endblock %}

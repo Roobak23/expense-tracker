@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="form-card">
+  <h2>{% if expense %}Edit Expense{% else %}Add Expense{% endif %}</h2>
+
+  <form method="post">
+    {% csrf_token %}
+
+    <label>Title</label>
+    <input name="title" required
+           value="{{ expense.title|default:'' }}">
+
+    <label>Amount</label>
+    <input name="amount" type="number" step="0.01" required
+           value="{{ expense.amount|default:'' }}">
+
+    <label>Category</label>
+    <input name="category"
+           value="{{ expense.category|default:'' }}">
+
+    <label>Date</label>
+    <input name="date" type="date" required
+           value="{{ expense.date|date:'Y-m-d' }}">
+
+    <button type="submit" class="btn full">Save Expense</button>
+  </form>
+</div>
+
+{% endblock %}

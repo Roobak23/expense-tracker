@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <header class="navbar">
+    <h1>💰 Expense Tracker</h1>
+    <a href="{% url 'add' %}" class="btn">+ Add Expense</a>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+</body>
+</html>
